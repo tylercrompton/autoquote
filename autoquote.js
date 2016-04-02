@@ -2,14 +2,15 @@
 
 (function () {
 	var replaceSingleQuotationMarks = function (value, offset, string) {
-		var spaceTester = /^\s$/;
+		var leftBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\(|\[|<|{)$/,
+			rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
 
 		/*
 		 * If there is no preceding character or the preceding character is a
 		 * space character, replace the apostrophe with a left single
 		 * quotation mark.
 		 */
-		if (offset === 0 || spaceTester.test(string[offset - 1])) {
+		if (offset === 0 || leftBoundaryTester.test(string[offset - 1])) {
 			return '‘';
 		}
 
@@ -18,7 +19,7 @@
 		 * space character, replace the apostrophe with a right single
 		 * quotation mark.
 		 */
-		if (offset === string.length - 1 || spaceTester.test(string[offset + 1])) {
+		if (offset === string.length - 1 || rightBoundaryTester.test(string[offset + 1])) {
 			return '’';
 		}
 
@@ -30,14 +31,15 @@
 	};
 
 	var replaceDoubleQuotationMarks = function (value, offset, string) {
-		var spaceTester = /^\s$/;
+		var leftBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\(|\[|<|{)$/,
+			rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
 
 		/*
 		 * If there is no preceding character or the preceding character is a
 		 * space character, replace the quotation mark with a left double
 		 * quotation mark.
 		 */
-		if (offset === 0 || spaceTester.test(string[offset - 1])) {
+		if (offset === 0 || leftBoundaryTester.test(string[offset - 1])) {
 			return '“';
 		}
 
@@ -46,7 +48,7 @@
 		 * space character, replace the quotation mark with a right double
 		 * quotation mark.
 		 */
-		if (offset === string.length - 1 || spaceTester.test(string[offset + 1])) {
+		if (offset === string.length - 1 || rightBoundaryTester.test(string[offset + 1])) {
 			return '”';
 		}
 
