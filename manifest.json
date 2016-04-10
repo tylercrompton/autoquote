@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 
-	"name": "Auto Quotes",
+	"name": "Autoquote",
 	"description": "This extension uses context to automatically determine which of the following characters should be used: quotation mark (U+0022), apostrophe (U+0027), right single quotation mark (U+2018), right single quotation mark (U+2019), left double quotation mark (U+201C), or right double quotation mark (U+201D).",
 	"version": "1.0",
 	"author": "Tyler Crompton",

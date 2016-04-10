@@ -97,8 +97,8 @@
 				'isEnabled': true
 			}, function (items) {
 				/*
-				 * Don't add any event listeners if Autoquotes has been
-				 * disabled through the browser action.
+				 * Don't add any event listeners if Autoquote has been disabled
+				 * through the browser action.
 				 */
 				if (!items.isEnabled) {
 					return;

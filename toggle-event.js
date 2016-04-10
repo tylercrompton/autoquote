@@ -1,6 +1,7 @@
 'use strict';
 
 (function () {
+	// Toggles the enablement of Autoquote.
 	var toggle = function () {
 		chrome.storage.local.get({
 			'isEnabled': true
