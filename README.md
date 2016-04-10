@@ -1,6 +1,6 @@
-#Autoquote
+# Autoquote
 
-This extension uses context to automatically determine which of the following characters should be used in text inputs:
+This extension uses context to automatically determine which of the following characters should be used in text inputs and textareas:
 
 - quotation mark (U+0022)
 - apostrophe (U+0027)
