@@ -2,7 +2,7 @@
 
 (function () {
 	var replaceSingleQuotationMarks = function (value, offset, string) {
-		var leftBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\(|\[|<|{)$/,
+		var leftBoundaryTester = /^(?:\s|\(|\[|<|{)$/,
 			rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
 
 		/*
@@ -31,7 +31,7 @@
 	};
 
 	var replaceDoubleQuotationMarks = function (value, offset, string) {
-		var leftBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\(|\[|<|{)$/,
+		var leftBoundaryTester = /^(?:\s|\(|\[|<|{)$/,
 			rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
 
 		/*
