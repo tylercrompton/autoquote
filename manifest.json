@@ -3,20 +3,8 @@
 
 	"name": "Auto Quotes",
 	"description": "This extension uses context to automatically determine which of the following characters should be used: quotation mark (U+0022), apostrophe (U+0027), right single quotation mark (U+2018), right single quotation mark (U+2019), left double quotation mark (U+201C), or right double quotation mark (U+201D).",
-	"version": "0.1",
+	"version": "1.0",
 	"author": "Tyler Crompton",
-
-	"icons": {
-		"16": "images/icon16.png",
-		"48": "images/icon48.png",
-		"128": "images/icon128.png"
-	},
-
-	"options_ui": {
-		"page": "options.html",
-		"chrome_style": true
-	},
-	"options_page": "options.html",
 
 	"content_scripts": [
 		{
@@ -25,8 +13,32 @@
 		}
 	],
 
+	"browser_action": {
+		"default_icon": {
+			"19": "images/icon19-enabled.png",
+			"38": "images/icon38-enabled.png"
+		}
+	},
+
+	"options_ui": {
+		"page": "options.html",
+		"chrome_style": true
+	},
+	"options_page": "options.html",
+
+	"background": {
+		"scripts": ["toggle-event.js"],
+		"persistent": false
+	},
+
 	"permissions": [
 		"activeTab",
 		"storage"
-	]
+	],
+
+	"icons": {
+		"16": "images/icon16.png",
+		"48": "images/icon48.png",
+		"128": "images/icon128.png"
+	}
 }
