@@ -1,9 +1,9 @@
 'use strict';
 
 (function () {
-	var replaceSingleQuotationMarks = function (value, offset, string) {
-		var leftBoundaryTester = /^(?:\s|\(|\[|<|{)$/,
-			rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
+	const replaceSingleQuotationMarks = function (value, offset, string) {
+		const leftBoundaryTester  = /^(?:\s|\(|\[|<|{)$/,
+		      rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
 
 		/*
 		 * If there is no preceding character or the preceding character is a
@@ -30,9 +30,9 @@
 		return '\'';
 	};
 
-	var replaceDoubleQuotationMarks = function (value, offset, string) {
-		var leftBoundaryTester = /^(?:\s|\(|\[|<|{)$/,
-			rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
+	const replaceDoubleQuotationMarks = function (value, offset, string) {
+		const leftBoundaryTester  = /^(?:\s|\(|\[|<|{)$/,
+		      rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
 
 		/*
 		 * If there is no preceding character or the preceding character is a
@@ -59,14 +59,14 @@
 		return '"';
 	};
 
-	var singleQuotationMarkEventListener = function (event) {
+	const singleQuotationMarkEventListener = function () {
 		/*
 		 * Changing the value of an input element causes the selection to
 		 * be the end of the input, so we need to store these values and
 		 * reset them after changing the value of the input element.
 		 */
-		var selectionStart = this.selectionStart,
-			selectionEnd = this.selectionEnd;
+		const selectionStart = this.selectionStart,
+		      selectionEnd   = this.selectionEnd;
 
 		this.value = this.value.replace(/['‘’]/g, replaceSingleQuotationMarks);
 
@@ -74,23 +74,23 @@
 		this.selectionEnd = selectionEnd;
 	};
 
-	var doubleQuotationMarkEventListener = function (event) {
+	const doubleQuotationMarkEventListener = function () {
 		/*
 		 * Changing the value of an input element causes the selection to
 		 * be at the end of the input, so we need to store these values and
 		 * reset them after changing the value of the input element.
 		 */
-		var selectionStart = this.selectionStart,
-			selectionEnd = this.selectionEnd;
+		const selectionStart = this.selectionStart,
+		      selectionEnd   = this.selectionEnd;
 
 		this.value = this.value.replace(/["“”]/g, replaceDoubleQuotationMarks);
 
 		this.selectionStart = selectionStart;
-		this.selectionEnd = selectionEnd;
+		this.selectionEnd   = selectionEnd;
 	};
 
-	var addEventListeners = function (element) {
-		var tagName = element.tagName.toUpperCase();
+	const addEventListeners = function (element) {
+		const tagName = element.tagName.toUpperCase();
 
 		if (tagName === 'INPUT' && element.type === 'text' || tagName === 'TEXTAREA') {
 			chrome.storage.local.get({
@@ -134,9 +134,9 @@
 				});
 			});
 		}
-	}
+	};
 
-	var removeEventListeners = function (element) {
+	const removeEventListeners = function (element) {
 		/*
 		 * Note: If an event listener wasn't added, removeEventListener
 		 * silently does nothing. That is, we don't need to add logic tests
