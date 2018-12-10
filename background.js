@@ -1,7 +1,7 @@
 'use strict';
 
-(function () {
-	var setIcon = function (statusText) {
+(() => {
+	const setIcon = function (statusText) {
 		chrome.browserAction.setIcon({
 			'path': {
 				'19': `images/icon19-${statusText}.png`,
@@ -10,8 +10,8 @@
 		});
 	};
 
-	// Toggles the enablement of Autoquote.
-	var toggle = function () {
+	// Toggles the enablement of Auto-Quote.
+	const toggle = function () {
 		chrome.storage.local.get({
 			'isEnabled': true
 		}, function (items) {
@@ -19,7 +19,7 @@
 				'isEnabled': !items.isEnabled
 			});
 
-			var statusText = items.isEnabled ? 'disabled' : 'enabled';
+			const statusText = items.isEnabled ? 'disabled' : 'enabled';
 
 			setIcon(statusText);
 
@@ -40,4 +40,4 @@
 			setIcon(items.isEnabled ? 'enabled' : 'disabled');
 		});
 	});
-}());
+})();

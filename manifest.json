@@ -1,15 +1,15 @@
 {
 	"manifest_version": 2,
 
-	"name": "Autoquote",
-	"description": "This extension uses context to automatically determine which quotation mark or apostrophe should be used.",
-	"version": "1.0.1",
+	"name": "Auto-Quote",
+	"description": "Auto-Quote uses context to automatically replace quotation marks or apostrophes with the appropriate character.",
+	"version": "1.0.2",
 	"author": "Tyler Crompton",
 
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"js":      ["autoquote.js"]
+			"js":      ["auto-quote.js"]
 		}
 	],
 

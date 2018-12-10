@@ -1,7 +1,7 @@
 'use strict';
 
-(function () {
-	var ready = function (fn) {
+(() => {
+	const ready = function (fn) {
 		if (document.readyState !== 'loading') {
 			fn();
 		} else {
@@ -10,12 +10,12 @@
 	};
 
 	ready(function () {
-		var shouldIgnoreSingleQuotationMarksElement = document.getElementById('should_ignore_single_quotation_marks'),
-			shouldIgnoreDoubleQuotationMarksElement = document.getElementById('should_ignore_double_quotation_marks');
+		const shouldIgnoreSingleQuotationMarksElement = document.getElementById('should_ignore_single_quotation_marks'),
+		      shouldIgnoreDoubleQuotationMarksElement = document.getElementById('should_ignore_double_quotation_marks');
 
-		var saveOptions = function () {
-			var shouldIgnoreSingleQuotationMarks = shouldIgnoreSingleQuotationMarksElement.checked,
-				shouldIgnoreDoubleQuotationMarks = shouldIgnoreDoubleQuotationMarksElement.checked;
+		const saveOptions = function () {
+			const shouldIgnoreSingleQuotationMarks = shouldIgnoreSingleQuotationMarksElement.checked,
+			      shouldIgnoreDoubleQuotationMarks = shouldIgnoreDoubleQuotationMarksElement.checked;
 
 			chrome.storage.sync.set({
 				'shouldIgnoreSingleQuotationMarks': shouldIgnoreSingleQuotationMarks,
@@ -23,7 +23,7 @@
 			});
 		};
 
-		var restoreOptions = function () {
+		const restoreOptions = function () {
 			chrome.storage.sync.get({
 				'shouldIgnoreSingleQuotationMarks': false,
 				'shouldIgnoreDoubleQuotationMarks': false
@@ -38,4 +38,4 @@
 
 		restoreOptions();
 	});
-}());
+})();

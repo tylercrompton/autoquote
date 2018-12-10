@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+(() => {
 	const replaceSingleQuotationMarks = function (value, offset, string) {
 		const leftBoundaryTester  = /^(?:\s|\(|\[|<|{)$/,
 		      rightBoundaryTester = /^(?:\s|\.|,|;|:|!|\?|\)|]|>|})$/;
@@ -177,4 +177,4 @@
 			addEventListeners(document.activeElement);
 		}
 	});
-}());
+})();
